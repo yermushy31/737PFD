@@ -2,115 +2,208 @@ body {
     background-color: #000000;
     margin: 0;
     padding: 0;
-}
-
-.widgets {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
-.virtualHorizon {
-    overflow: hidden;
-    border-radius: 40px;
-    width: 22rem;
-    height: 22rem;
-    background-color: #fff;
-    top: 30rem;
-    left: 35rem;
-    transform: translate(5.5rem, -1rem);
-}
-
-.horizonImage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
-    width: 500px;
-    height: 800px;
-    transform-origin: center;
-}
-
-.horizon {
-    position: absolute;
-    overflow: hidden;
-    background-color: #00000000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50.5%, -50%);
-}
-
-.hmarker {
-    overflow: hidden;
-    background-color: #00000000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-28.5%, -10.4%);
-}
-
-.airspeed {
-    overflow: hidden;
-    height: 25rem;
-    width: 4rem;
-    background-color: #7a7a7a;
-    top: 28rem;
-    left: 32rem;
-    transform: translate(-710%, -5%);
-}
-
-.altimeter {
-    overflow: hidden;
-    height: 25rem;
-    width: 4rem;
-    background-color: #7a7a7a;
-    top: 28rem;
-    left: 32rem;
-    transform: translate(230%, -4%);
-}
-
-.airspeedMarker {
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(260%, -50%);
-}
-
-.altimeterMarker {
-    /* make arrow */
-    position: absolute;
-    overflow: hidden;  
-    width: 4.2rem;
-    height: 2.4rem;
-    top: 50%;
-    left: 50%;
-    transform:  translate(-50%, -60%);
-}
-
-.speedMarker {
-    overflow: hidden;
-    width: 4.2rem;
-    height: 2.4rem;
-    top: 11rem;
-    right: 0.1rem; 
-    transform: translate(-1%, -599%);
-}
 
 /* Media queries for different devices */
 
 /* Laptop */
-@media screen and (max-width: 1024px) {
-  
+@media screen and (min-width: 1024px) {
+    .widgets {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .virtualHorizon {
+        overflow: hidden;
+        border-radius: 40px;
+        width: 22rem;
+        height: 22rem;
+        background-color: #fff;
+        top: 30rem;
+        left: 35rem;
+        transform: translate(5.5rem, -1rem);
+    }
+    
+    .horizonImage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
+        width: 500px;
+        height: 800px;
+        transform-origin: center;
+    }
+    
+    .horizon {
+        position: absolute;
+        overflow: hidden;
+        background-color: #00000000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .hmarker {
+        overflow: hidden;
+        background-color: #00000000;
+        width: 40rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-22.5%, -3.5%);
+    }
+    
+    .airspeed {
+        overflow: hidden;
+        height: 25rem;
+        width: 4rem;
+        background-color: #7a7a7a;
+        top: 28rem;
+        left: 32rem;
+        transform: translate(-710%, -5%);
+    }
+    
+    .altimeter {
+        overflow: hidden;
+        height: 25rem;
+        width: 4rem;
+        background-color: #7a7a7a;
+        top: 28rem;
+        left: 32rem;
+        transform: translate(230%, -4%);
+    }
+    
+    .airspeedMarker {
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(260%, -50%);
+    }
+    
+    .altimeterMarker {
+        /* make arrow */
+        position: absolute;
+        overflow: hidden;  
+        width: 4.2rem;
+        height: 2.4rem;
+        top: 50%;
+        left: 50%;
+        transform:  translate(-50%, -60%);
+    }
+    
+    .speedMarker {
+        overflow: hidden;
+        width: 4.2rem;
+        height: 2.4rem;
+        top: 11rem;
+        right: 0.1rem; 
+        transform: translate(-1%, -599%);
+    }
+    
 }
 
 /* Tablet */
-@media screen and (max-width: 768px) {
-    /* Modify the CSS properties for tablet */
+@media screen and (max-width: 1024px) {
+    .widgets {      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: auto;
+        margin: 5%;
+    }
+    
+    .virtualHorizon {
+        overflow: hidden;
+        border-radius: 40px;
+        width: 17rem;
+        height: 17rem;
+        background-color: #fff;
+        top: 30rem;
+        left: 35rem;
+        transform: translate(5.5rem, -1rem);
+    }
+       
+    .horizon {
+        position: absolute;
+        overflow: hidden;
+        background-color: #00000000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .hmarker {
+        overflow: hidden;
+        background-color: #00000000;
+        width: 40rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-28.5%, -11.5%);
+    }
+    
+    .airspeed {
+        overflow: hidden;
+        height: 20rem;
+        width: 4rem;
+        background-color: #7a7a7a;
+        transform: translate(-590%, -5%);
+    }
+    
+    .altimeter {
+        overflow: hidden;
+        height: 20rem;
+        width: 4rem;
+        background-color: #7a7a7a;
+        transform: translate(230%, -4%);
+    }
+    
+    .airspeedMarker {
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(260%, -50%);
+    }
+
+    #Altitude {
+        height: 20.5rem;
+    }
+
+    #airSpeed {
+        height: 20.5rem;
+    }
+    
+    .altimeterMarker {
+        /* make arrow */
+        position: absolute;
+        overflow: hidden;  
+        width: 4.2rem;
+        height: 2.4rem;
+        top: 50%;
+        left: 50%;
+        transform:  translate(-50%, -60%);
+    }
+    
+    .speedMarker {
+        overflow: hidden;
+        width: 4.2rem;
+        height: 2.4rem;
+        top: 11rem;
+        right: 0.1rem; 
+        transform: translate(-1.5%, -490%);
+    }
 }
 
 /* Smartphone */
@@ -119,6 +212,95 @@ body {
 }
 
 /* Tiny Smartphone */
-@media screen and (max-width: 320px) {
-    /* Modify the CSS properties for tiny smartphone */
+@media screen and (max-width: 420px) {
+    .widgets {      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    
+    .virtualHorizon {
+        overflow: hidden;
+        border-radius: 40px;
+        width: 13rem;
+        height: 13rem;
+        background-color: #fff;
+        top: 30rem;
+        left: 30rem;
+        transform: translate(32%, -5%);
+    }
+       
+    .horizon {
+        position: absolute;
+        overflow: hidden;
+        background-color: #00000000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .hmarker {
+        overflow: hidden;
+        background-color: #00000000;
+        width: 30rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-29%, -13%);
+
+    }
+    
+    .airspeed {
+        overflow: hidden;
+        height: 20rem;
+        width: 4rem;
+        background-color: #7a7a7a;
+        transform: translate(-440%, -5%);
+    }
+    
+    .altimeter {
+        overflow: hidden;
+        height: 20rem;
+        width: 4rem;
+        background-color: #7a7a7a;
+        transform: translate(120%, -4%);
+    }
+    
+    .airspeedMarker {
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(260%, -50%);
+    }
+
+    #Altitude {
+        height: 20.5rem;
+    }
+
+    #airSpeed {
+        height: 20.5rem;
+    }
+    
+    .altimeterMarker {
+        /* make arrow */
+        position: absolute;
+        overflow: hidden;  
+        width: 4.2rem;
+        height: 2.4rem;
+        top: 50%;
+        left: 50%;
+        transform:  translate(-50%, -50%);
+    }
+    
+    .speedMarker {
+        overflow: hidden;
+        width: 4.2rem;
+        height: 2.4rem;
+        top: 11rem;
+        right: 0.1rem; 
+        transform: translate(-1.5%, -490%);
+    }
 }
