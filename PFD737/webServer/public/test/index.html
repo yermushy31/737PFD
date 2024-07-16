@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <canvas id="target" width="100" height="50"></canvas>
+</div>
+</body>
+</html>
+
+<script>
+    class horizontalIndicator {
+        #canvas;
+        #context;
+        #backgroundColor;
+        #textColor;
+        #font;
+
+        constructor(target, backgroundColor, textColor, font) {
+            this.#canvas = target;
+            this.#context = target.getContext("2d");
+            this.#backgroundColor = backgroundColor;
+            this.#textColor = textColor;
+            this.#font = font;
+        }
+
+        render(value, range) {
+            this.#context.fillStyle = this.#backgroundColor;
+            this.#context.fillRect(0, 0, this.#canvas.width*0.7, this.#canvas.height);
+            //draw triangle at the right side   
+            this.#context.beginPath();
+            this.#context.moveTo(this.#canvas.width*0.7, 0);
+            this.#context.lineTo(this.#canvas.width, this.#canvas.height / 2);
+            this.#context.lineTo(this.#canvas.width*0.7, this.#canvas.height);
+            this.#context.fill();
+
+            this.#context.fillStyle = this.#textColor;
+            this.#context.font = this.#font;
+
+            const spacing = this.#canvas.height / (2 * range);
+            const centerY = this.#canvas.height / 2;
+
+            this.#context.fillText("►", this.#canvas.width * 0.7, centerY *1.15);
+
+
+            for (let i = -range; i <= range; i++) {
+                const index = Math.floor(value) + i;
+                const yPos = centerY + (i - (value % 1)) * spacing;
+                this.#context.fillText(index, 10, yPos);
+            }
+        }
+    }
+
+    const mainIndicator = new horizontalIndicator(
+        document.getElementById("target"),
+        "rgb(128,128,128)",
+        "rgb(255,255,255)",
+        "15px Arial"
+    );
+
+    let val = 0
+
+    setInterval(()=>{
+        mainIndicator.render(val,1);
+        val += 0.01
+    })
+</script>
+
+<!--
+
+◄
+►
+-->
