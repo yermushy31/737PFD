@@ -24,7 +24,6 @@ struct AircraftData {
 static DWORD DATA_REQUEST_ID = 1;
 websocket_server ws_server;
 
-// Maintain a set to store active connections
 std::set<websocket_connection> connections;
 
 void sendAircraftData(const AircraftData* pData) {
@@ -72,7 +71,6 @@ void CALLBACK MyDispatchProc(SIMCONNECT_RECV* pData, DWORD cbData, void* pContex
 
 int main() {
     try {
-        // SimConnect initialization
         HANDLE hSimConnect = NULL;
         HRESULT hr = SimConnect_Open(&hSimConnect, "My Client", NULL, 0, 0, 0);
 
@@ -83,7 +81,7 @@ int main() {
 
         std::cout << "Connected to Flight Simulator 2020!" << std::endl;
 
-        // Define SimConnect data definition
+    
         DWORD dwDataDefinitionId = 1;
 
         SimConnect_AddToDataDefinition(hSimConnect, dwDataDefinitionId, "PLANE LATITUDE", "degrees latitude", SIMCONNECT_DATATYPE_FLOAT64);
@@ -93,10 +91,9 @@ int main() {
         SimConnect_AddToDataDefinition(hSimConnect, dwDataDefinitionId, "PLANE PITCH DEGREES", "radians", SIMCONNECT_DATATYPE_FLOAT32);
         SimConnect_AddToDataDefinition(hSimConnect, dwDataDefinitionId, "PLANE BANK DEGREES", "radians", SIMCONNECT_DATATYPE_FLOAT32);
 
-        // Request data on SimObject
+    
         SimConnect_RequestDataOnSimObject(hSimConnect, DATA_REQUEST_ID, dwDataDefinitionId, SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_PERIOD_SIM_FRAME, 0, 0, 0);
 
-        // WebSocket server setup
         ws_server.clear_access_channels(websocketpp::log::alevel::all);
         ws_server.init_asio();
         ws_server.set_reuse_addr(true);
@@ -105,16 +102,13 @@ int main() {
         ws_server.listen(8080);
         ws_server.start_accept();
 
-        // Simulated loop to keep the program running
+    
         while (SIMCONNECT_STATE::SIMCONNECT_STATE_ON) {
-            // Process SimConnect events
             SimConnect_CallDispatch(hSimConnect, MyDispatchProc, nullptr);
             ws_server.poll();
-            std::this_thread::sleep_for(std::chrono::milliseconds(20)); // Adjust loop speed to desired frequency
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
         }
 
-
-        // Cleanup SimConnect
         SimConnect_Close(hSimConnect);
 
     } catch (const std::exception& e) {
