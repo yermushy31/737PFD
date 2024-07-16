@@ -1,0 +1,69 @@
+body { 
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.virtualHorizon {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 40px;
+    width: 22rem;
+    height: 22rem;
+    background-color: #fff;
+    top: 28rem;
+    left: 35rem;
+    transform: translate(-11rem, -11rem);
+}
+
+.horizonImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
+    width: 500px;
+    height: 800px;
+    transform-origin: center;
+}
+
+
+.airspeed {
+    position: absolute;
+    overflow: hidden;
+    height: 25rem;
+    width: 7rem;
+    background-color: #7a7a7a;
+    top: 28rem;
+    left: 32rem;
+    transform: translate(220%, -50%);
+
+}
+
+.airspeedMarker {
+    /* make arrow */
+    position: absolute;
+    overflow: hidden;
+    background-color: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(260%, -50%);
+
+}
+
+.altimeter {
+    position: absolute;
+    overflow: hidden;
+    height: 25rem;
+    width: 7rem;
+    background-color: #7a7a7a;
+    top: 28rem;
+    left: 38rem;
+    transform: translate(-320%, -50%);
+}
+
+.speedMarker {
+    position: absolute;
+    overflow: hidden;
+    top: 11rem;
+    left: 0rem; 
+}

@@ -1,0 +1,3 @@
+C:/Users/yermushy/CLionProjects/FS2020Server/cmake-build-debug/CMakeFiles/SimConnectServer.dir
+C:/Users/yermushy/CLionProjects/FS2020Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/yermushy/CLionProjects/FS2020Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
