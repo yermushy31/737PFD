@@ -74,7 +74,6 @@ class CanvasIndicator {
         this.#context.fillStyle = this.#backgroundColor;
         this.#context.fillRect(0, 0, this.#canvas.width*1, this.#canvas.height);
        
- 
         this.#context.fillStyle = this.#textColor;
         this.#context.font = this.#font;
     
